@@ -25,6 +25,7 @@
 </head>
 
 <body>
+    @include('layout.navbar')
     <div class="app-wrapper">
         <div class="app-container">
             <div class="side-bar">

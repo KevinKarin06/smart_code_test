@@ -35,6 +35,7 @@ class ArticleController extends Controller
             }
         }
         $res = $this->repository->getAll()->sortByDesc('published_at')->paginate(4);
+       
         return view('index', ['data' => $res, 'cat_id' => -1]);
     }
 

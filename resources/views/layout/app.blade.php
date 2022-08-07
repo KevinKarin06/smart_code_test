@@ -25,6 +25,7 @@
 </head>
 
 <body>
+    @include('layout.navbar')
     <div class="app-wrapper">
         <div class="app-container">
             <div class="main-content">
@@ -44,7 +45,7 @@
                                 <div class="card-body">
                                     <h5 class="card-title"><a href="{{route('article.show',$breaking_article->id)}}">{{$breaking_article['title']}}</a></h5>
                                     <p class="card-text">{{$breaking_article['description']}}</p>
-                                    <p class="card-text"><small class="text-muted">{{$breaking_article['published_at']}}</small></p>
+                                    <p class="card-text"><small class="text-muted">{{$breaking_article['published_at']->isoFormat('MMMM Do YYYY, h:mm:ss a')}}</small></p>
                                 </div>
                             </div>
                         </div>
@@ -76,21 +77,21 @@
     </div>
 </body>
 <footer>
-    <div class="py-5 px-2 bg-secondary h-25">
+    <div class="py-5 px-2 bg-light h-25">
         @if (session('status'))
         <div class="alert alert-success">
             {{ session('status') }}
         </div>
         @endif
-        <h3 class="text-white">Subscribe to our newsletter</h3>
-        <p class="text-white">Never miss what's happening around the world!</p>
+        <h3 class="">Subscribe to our newsletter</h3>
+        <p class="">Never miss what's happening around the world!</p>
         <form class="row g-3" action="{{url('news-letter')}}" method="post">
             @csrf
-            <div class="col-auto">
+            <div class="col-md-6 col-sm-12">
                 <label for="inputPassword2" class="visually-hidden">Email</label>
                 <input type="email" name="mail" class="form-control" id="inputPassword2" required placeholder="Email">
             </div>
-            <div class="col-auto">
+            <div class="col-md-6 col-sm-12">
                 <button type="submit" class="btn btn-primary mb-3">Subscribe</button>
             </div>
         </form>

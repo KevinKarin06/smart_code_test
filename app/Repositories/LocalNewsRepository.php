@@ -9,7 +9,7 @@ class LocalNewsRepository implements INewsInterface
 {
     public function getAll()
     {
-        return Article::where('breaking', false)->get();
+        return Article::all();
     }
 
     public function getBreaking()

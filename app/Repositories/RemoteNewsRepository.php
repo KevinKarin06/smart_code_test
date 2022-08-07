@@ -40,7 +40,7 @@ class RemoteNewsRepository implements INewsInterface
         }
 
         $articleCollection = collect($models);
-        Cache::put('remote_articles', $articleCollection, now()->addMinutes(10));
+        Cache::put('remote_articles', $articleCollection, now()->addMinutes(30));
         return $articleCollection;
     }
 

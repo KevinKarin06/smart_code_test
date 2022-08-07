@@ -14,6 +14,7 @@
                 <a href="{{route('article.show',$article->id??$article->title)}}"> {{$article['title']}}</a>
             </h5>
             <p class="card-text">{{$article['description']}}</p>
+            <p class="card-text"><small class="text-muted">{{$article['published_at']->isoFormat('MMMM Do YYYY, h:mm:ss a')}}</small></p>
         </div>
     </div>
 </div>

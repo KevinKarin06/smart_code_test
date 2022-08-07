@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Storage;
 
 class Article extends Model
@@ -13,7 +14,7 @@ class Article extends Model
 
     protected $guarded = [];
 
-    protected $casts = ['breaking' => 'boolean'];
+    protected $casts = ['breaking' => 'boolean', 'published_at' => 'datetime'];
 
     public function categories()
     {
@@ -26,4 +27,10 @@ class Article extends Model
             get: fn ($value) => isset($this->id) ? Storage::url($value) : $value,
         );
     }
+    // public function publishedAt(): Attribute
+    // {
+    //     return Attribute::make(
+    //         get: fn ($value) => (Carbon::parse($value, 'UTC'))->isoFormat('MMMM Do YYYY, h:mm:ss a'),
+    //     );
+    // }
 }
