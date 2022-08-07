@@ -65,7 +65,7 @@ class NewsRepository
                 'content' => $request->content,
                 'published_at' => now(),
                 "category" => $request->category,
-                "breaking" => $request->breaking,
+                "breaking" => $request->breaking ?? false,
                 "breaking_text" => $request->banner_text,
                 "color" => $request->color ?? '#eb1515'
             ];
