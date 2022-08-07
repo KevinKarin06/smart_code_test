@@ -1,0 +1,23 @@
+.side-bar {
+    height: 100vh;
+}
+.admin-panel{
+    width: 100%;
+}
+.side-bar ul {
+    width: 100%;
+}
+
+.main-content {
+    align-items: flex-start;
+}
+
+.cat-header  {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.cat-header a{
+    margin-left: 10px;
+}

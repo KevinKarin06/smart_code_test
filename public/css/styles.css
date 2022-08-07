@@ -1,0 +1,94 @@
+* {
+    box-sizing: border-box;
+}
+
+.app-container {
+    display: flex;
+    width: 95%;
+    margin: auto;
+    justify-content: space-between;
+}
+
+.side-bar {
+    width: 30%;
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.categories,
+.breaking {
+    width: 100%;
+}
+
+.main-content {
+    width: 70%;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.article-detail {
+    margin-top: 10px;
+    padding: 10px 0;
+    text-align: left;
+    width: 100%;
+}
+
+.card-banner {
+    padding: 10px;
+}
+
+.breaking h5 {
+    max-lines: 1;
+    text-overflow: ellipsis;
+    max-width: 800px;
+}
+
+.card-banner>p {
+    color: white;
+    margin-top: 5px !important;
+    margin-bottom: 5px !important;
+}
+
+@media only screen and (max-width: 600px) {
+    .app-container {
+        flex-direction: column;
+    }
+
+    .side-bar {
+        width: 100%;
+        padding: 10px 10px;
+    }
+
+    .main-content {
+        width: 100%;
+        padding: 10px;
+    }
+
+    #card-sm {
+        width: 100% !important;
+    }
+}
+
+footer>div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.dropdown-toggle::after {
+    display: none;
+}
+
+.text-decoration-none {
+    text-decoration: none !important;
+}
+
+/* Font Awesome Icons have variable width. Added fixed width to fix that.*/
+.icon-width {
+    width: 2rem;
+}
