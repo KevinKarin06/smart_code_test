@@ -14,7 +14,7 @@
     </div>
     @endif
     <table class="table table-striped caption-top">
-        <caption>List of Articles</caption>
+        <caption>List of Articles <span>({{$articles->count()}})</span> </caption>
         <thead>
             <tr>
                 <th scope="col">#</th>

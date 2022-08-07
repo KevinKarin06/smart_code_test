@@ -16,7 +16,7 @@
                     <a class="nav-link active" aria-current="page" href="{{route('article.index')}}">Contact</a>
                 </li>
                 @if(Auth::check())
-                <li class="nav-item dropdown align-self-end">
+                <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         {{ Auth::user()->name }}
                     </a>

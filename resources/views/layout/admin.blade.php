@@ -31,8 +31,11 @@
             <div class="side-bar">
                 <div class="admin-panel">
                     <ul class="list-group">
-                        <a class="list-group-item list-group-item-action" href="{{route('admin.article')}}">Articles</a>
-                        <a class="list-group-item list-group-item-action" href="{{route('category.index')}}">Categories</a>
+                        <a class="list-group-item list-group-item-action {{Request::is('admin')?'active':''}}" href="{{route('admin.index')}}">Overview</a>
+                        <a class="list-group-item list-group-item-action 
+                        {{(Request::is('admin/article') || Request::is('admin/article/*'))?'active':''}}" href="{{route('admin.article')}}">Articles</a>
+                        <a class="list-group-item list-group-item-action 
+                        {{(Request::is('admin/category') || Request::is('admin/category/*'))?'active':''}}" href="{{route('category.index')}}">Categories</a>
                     </ul>
                 </div>
             </div>

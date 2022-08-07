@@ -15,6 +15,8 @@ use App\Http\Controllers\Auth\NewPasswordController;
 use App\Http\Controllers\Auth\PasswordResetLinkController;
 use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\Auth\VerifyEmailController;
+use App\Models\Category;
+use Illuminate\Support\Facades\Cache;
 
 /*
 |--------------------------------------------------------------------------
@@ -83,7 +85,12 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::prefix('admin')->middleware(['auth'])->group(function () {
-    Route::view('', 'admin.index');
+    Route::get('', function () {
+        $remote = Cache::get('remote_articles', collect([]));
+        $totalArticles = Article::count() + count($remote);
+        $totalCategories = Category::count();
+        return view('admin.index', ['totalArticles' => $totalArticles, 'totalCategories' => $totalCategories]);
+    })->name('admin.index');
     Route::get('article', function (Request $request) {
         $articles = Article::orderBy('published_at', 'desc')->get();
         return view('admin.index_article', ['articles' => $articles]);
