@@ -21,16 +21,11 @@ class Article extends Model
         return $this->belongsToMany(Category::class);
     }
 
-    protected function imgUrl(): Attribute
-    {
-        return Attribute::make(
-            get: fn ($value) => isset($this->id) ? Storage::url($value) : $value,
-        );
-    }
-    // public function publishedAt(): Attribute
+    // protected function imgUrl(): Attribute
     // {
     //     return Attribute::make(
-    //         get: fn ($value) => (Carbon::parse($value, 'UTC'))->isoFormat('MMMM Do YYYY, h:mm:ss a'),
+    //         get: fn ($value) => isset($this->id) ? Storage::url($value) : $value,
     //     );
     // }
+
 }

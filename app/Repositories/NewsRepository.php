@@ -67,7 +67,7 @@ class NewsRepository
                 "category" => $request->category,
                 "breaking" => $request->breaking,
                 "breaking_text" => $request->banner_text,
-                "color" => $request->color
+                "color" => $request->color ?? '#eb1515'
             ];
             $resp = $this->local->create($data, $id);
             DB::commit();
