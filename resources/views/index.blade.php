@@ -19,7 +19,7 @@
     </div>
 </div>
 @endforeach
-<div class="container">
+<div class="pag">
     {{$data->links()}}
 </div>
 @else

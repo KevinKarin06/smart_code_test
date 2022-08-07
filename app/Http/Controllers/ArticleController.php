@@ -30,11 +30,11 @@ class ArticleController extends Controller
             if (count($cats) > 0) {
                 $cat = Category::find($cats['cat_id']);
                 // dd($cat);
-                $articles = $cat->articles->sortByDesc('published_at')->paginate(4);
+                $articles = $cat->articles->sortByDesc('published_at')->paginate(15);
                 return view('index', ['data' => $articles, 'cat_id' => $cats['cat_id']]);
             }
         }
-        $res = $this->repository->getAll()->sortByDesc('published_at')->paginate(4);
+        $res = $this->repository->getAll()->sortByDesc('published_at')->paginate(15);
        
         return view('index', ['data' => $res, 'cat_id' => -1]);
     }
