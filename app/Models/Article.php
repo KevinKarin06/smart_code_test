@@ -21,11 +21,10 @@ class Article extends Model
         return $this->belongsToMany(Category::class);
     }
 
-    // protected function imgUrl(): Attribute
-    // {
-    //     return Attribute::make(
-    //         get: fn ($value) => isset($this->id) ? Storage::url($value) : $value,
-    //     );
-    // }
-
+    protected function imgUrl(): Attribute
+    {
+        return Attribute::make(
+            get: fn ($value) => isset($this->id) ? url('') . '/' . $value : $value,
+        );
+    }
 }
