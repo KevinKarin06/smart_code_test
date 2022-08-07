@@ -19,7 +19,9 @@
     </div>
 </div>
 @endforeach
-{{$data->links()}}
+<div class="container">
+    {{$data->links()}}
+</div>
 @else
 <div class="no-article">No Content</div>
 @endif
