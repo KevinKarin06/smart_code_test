@@ -22,7 +22,7 @@ return new class extends Migration
             $table->string('url')->nullable();
             $table->string('img_url');
             $table->mediumText('description');
-            $table->longText('content')->default('');
+            $table->longText('content');
             $table->dateTime('published_at');
             $table->boolean('breaking')->default(false);
             $table->string('breaking_text')->nullable()->default('Breaking News');
