@@ -7,6 +7,7 @@ use App\Models\Category;
 use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Collection;
+use Illuminate\Support\Facades\URL;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\View;
 
@@ -29,6 +30,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        if ($this->app->environment('production')) {
+            URL::forceScheme('https');
+        }
+
         Paginator::useBootstrap();
 
         Collection::macro('paginate', function ($perPage, $total = null, $page = null, $pageName = 'page') {
